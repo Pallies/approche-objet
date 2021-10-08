@@ -8,12 +8,14 @@ public class TestIntervenant {
 
 	public static void main(String[] args) {
 
-		Intervenant salarie = new Salarie("Tom", "Hemming");
-		Intervenant pigiste = new Pigiste("Edward", "Awast");
-		System.out.println("pigiste : "+pigiste.getSalary());
-		System.out.println("salarie : "+salarie.getSalary());
-		;
-		
+		Intervenant salarie = new Salarie("Tom", "Hemming", 2500);
+		Intervenant pigiste = new Pigiste("Edward", "Awast", 500, 14);
+		System.out.println("pigiste : " + pigiste.getSalary());
+		System.out.println("salarie : " + salarie.getSalary());
+
+		pigiste.afficherDonnees();
+		salarie.afficherDonnees();
+
 	}
 
 }

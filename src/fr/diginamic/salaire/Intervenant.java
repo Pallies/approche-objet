@@ -24,11 +24,24 @@ public abstract class Intervenant {
 	}
 	
 	/**
+	 * affichage du 
+	 * nom 
+	 * prenom
+	 * salaire
+	 * status
+	 */
+	public void afficherDonnees() {
+		System.out.println(" lastName = " + lastName + ", name = " + name+" salary "+getSalary()+" status : "+getStatus());
+	}
+
+	/**
 	 * @see in the children
 	 */
 	public abstract double getSalary();
-
-	public abstract afficherDonnees();
+	/**
+	 * @see in the children
+	 */
+	public abstract String getStatus();
 	/**
 	 * Getter
 	 * 
@@ -64,7 +77,5 @@ public abstract class Intervenant {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
 
 }
