@@ -15,12 +15,10 @@ public class Rectangle implements ObjectGeometrique {
 		longueur = dLong;
 	}
 
-	@Override
 	public double perimetre() {
 		return 2*(largeur + longueur);
 	}
 
-	@Override
 	public double surface() {
 		return largeur * longueur;
 	}

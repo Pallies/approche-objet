@@ -7,7 +7,7 @@ public class TestObjetGeometrique {
 	public static void main(String[] args) {
 
 		Cercle cercle = new Cercle(5);
-		Rectangle rectangle = new Rectangle(3, 6);
+		ObjectGeometrique rectangle = new Rectangle(3, 6);
 
 		int tabLength = objGeometricGeometrique.length;
 
