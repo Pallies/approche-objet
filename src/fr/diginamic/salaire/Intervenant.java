@@ -31,7 +31,7 @@ public abstract class Intervenant {
 	 * status
 	 */
 	public void afficherDonnees() {
-		System.out.println(" lastName = " + lastName + ", name = " + name+" salary "+getSalary()+" status : "+getStatus());
+		System.out.println("\n lastName : " + lastName + "\n name : " + name+"\n salary "+getSalary()+"\n status : "+getStatus());
 	}
 
 	/**

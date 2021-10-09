@@ -1,6 +1,5 @@
 package fr.diginamic.salaire;
 
-import java.util.Objects;
 
 /**
  * @author Yvan Pallies
@@ -11,7 +10,8 @@ import java.util.Objects;
  */
 public class Salarie extends Intervenant {
 
-	double salary;// le montant du salaire mensuel
+	private double salary;// le montant du salaire mensuel
+	public static final String STATUS="CDD / CDI";
 
 	/**
 	 * #Constructor
@@ -41,7 +41,7 @@ public class Salarie extends Intervenant {
 	 */
 	@Override
 	public String getStatus() {
-		return "CDD / CDI";
+		return STATUS;
 	}
 
 	/**

@@ -10,7 +10,7 @@ public class Pigiste extends Intervenant {
 
 	private int workingDay;// le nombre de jours travaillés pour la société durant le mois
 	private double salaryDaily;// le montant journalier de rémunération
-
+	public static final String STATUS="prestataires";
 	/**
 	 * #Constructor extends Intervenant
 	 * 
@@ -40,7 +40,7 @@ public class Pigiste extends Intervenant {
 	 */
 	@Override
 	public String getStatus() {
-		return "prestataires";
+		return STATUS;
 	}
 	/**
 	 * Getter
