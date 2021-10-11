@@ -2,11 +2,16 @@ package fr.diginamic.jdr.affichage;
 
 import fr.diginamic.jdr.modele.Personnage;
 
+/**
+ *  Affichage des combats
+ * @author Yvan Palliès
+ *
+ */
 public class AffichageCombat {
 
 	static final String PV_STRING = " point de vie";
 	
-	private String name;
+	private String name;// nom de la créature rencontrée
 	
 	
 	/** #Constructor

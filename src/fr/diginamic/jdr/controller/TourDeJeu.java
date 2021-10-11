@@ -6,6 +6,13 @@ import java.util.Scanner;
 import fr.diginamic.jdr.affichage.Affichage;
 import fr.diginamic.jdr.modele.Hero;
 
+/**
+ * Partie principal
+ * initialisation du menu
+ * et direction des choix utilisateur
+ * @author Yvan Palliès
+ *
+ */
 public class TourDeJeu {
 
 	private Hero personnage;
@@ -18,15 +25,18 @@ public class TourDeJeu {
 	 */
 	public TourDeJeu(Hero perso) {
 		this.personnage = perso;
-
 	}
 
+	/**
+	 * Affichage Menu et
+	 * Attente du choix utilisateur
+	 */
 	public void choiceMenu() {
 		Scanner scanner;
 		int keyNumber;
 
 
-		while (true && personnage.getPointDeVie()>0) {
+		while (personnage.getPointDeVie()>0) {
 			try {
 //				affichage
 				view.spaceBlank();
@@ -45,6 +55,10 @@ public class TourDeJeu {
 		view.loose(personnage);
 	}
 
+	/**
+	 * redirection vers la sélection
+	 * @param nb choix utilisateur
+	 */
 	public void controller(int nb) {
 		switch (nb) {
 		case 1:

@@ -6,6 +6,12 @@ import fr.diginamic.jdr.affichage.AffichageCombat;
 import fr.diginamic.jdr.modele.Hero;
 import fr.diginamic.jdr.modele.Personnage;
 
+/**
+ * Menu - 1
+ * gestion des combats
+ * @author Yvan Palliès
+ *
+ */
 public class Combattre {
 
 	private int tour = 1;

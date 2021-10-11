@@ -2,6 +2,11 @@ package fr.diginamic.jdr.affichage;
 
 import fr.diginamic.jdr.modele.Hero;
 
+/**
+ * Affichage général du jeu
+ * @author Yvan Palliès
+ *
+ */
 public class Affichage {
 	private String[] menuContent = { "Choissisez une option : ", "1 : Combattre une créature", "2 : Afficher score",
 			"4 : Sortir" };
@@ -24,6 +29,10 @@ public class Affichage {
 		new Cadre(scoreString, 5);
 	}
 
+	/**
+	 * Affichage fin de partie
+	 * @param perso
+	 */
 	public void loose(Hero perso) {
      new Cadre("GAME OVER "+perso.getScore(), 7);
 	}

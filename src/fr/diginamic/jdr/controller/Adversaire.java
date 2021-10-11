@@ -7,6 +7,11 @@ import fr.diginamic.jdr.modele.Loup;
 import fr.diginamic.jdr.modele.Personnage;
 import fr.diginamic.jdr.modele.Troll;
 
+/**
+ * Détermine l'adversaire rencontré
+ * @author Yvan Palliès
+ *
+ */
 public class Adversaire {
 
 	private Personnage creature;

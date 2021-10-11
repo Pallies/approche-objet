@@ -1,7 +1,7 @@
 package fr.diginamic.jdr.affichage;
 
 /**
- * Class servant à l'affichage d'un cadre
+ * Affichage d'un cadre
  * pour englober un message
  * @author Yvan Palliès
  *
