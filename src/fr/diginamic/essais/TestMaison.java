@@ -3,6 +3,7 @@ package fr.diginamic.essais;
 import fr.diginamic.maison.Chambre;
 import fr.diginamic.maison.Cuisine;
 import fr.diginamic.maison.Maison;
+import fr.diginamic.maison.Maison.PieceObject;
 import fr.diginamic.maison.SalleDeBain;
 import fr.diginamic.maison.Salon;
 import fr.diginamic.maison.Wc;
@@ -34,10 +35,16 @@ public class TestMaison {
 		maison.addPiece(wc2);
 
 		double area = maison.totalArea();
-		System.out.println(area);
+		System.out.println("Superficie totale : "+area);
 		area = maison.totalAreaByFloor(1);
-		System.out.println(area);
-	
+		System.out.println("Superficie de l'étage 1 : "+area);
+		area = maison.totalAreaByRoom(chambre2);
+		System.out.println("Superficie des chambres : "+area);
+		int nb = maison.totalByRooms(chambre2);
+		System.out.println("Nombre de pièces : "+nb+ " "+chambre2.getClass().getSimpleName());
+		PieceObject piece = maison.totalAreaByRoomOrRooms(chambre3);
+		System.out.println("Superficie de(s) "+piece.getInstanceObject()+"(s) "+piece.getAreaRoom()+" nbre de pièce(s) "+piece.getNbRoom());
+		
 	}
 
 }
