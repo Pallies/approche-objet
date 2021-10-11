@@ -27,7 +27,7 @@ public class CalculMoyenne {
 		for (double moy : moyenne) {
 			add += moy;
 		}
-		return add;
+		return add/moyenne.length;
 	}
 
 	/**
