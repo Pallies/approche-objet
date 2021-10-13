@@ -2,6 +2,7 @@ package fr.diginamic.swing.jdr.controler;
 
 import fr.diginamic.swing.jdr.personnage.Creature;
 import fr.diginamic.swing.jdr.personnage.Hero;
+import fr.diginamic.swing.jdr.personnage.Personnage;
 
 /**
  * Class traite le combat

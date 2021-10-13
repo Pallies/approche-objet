@@ -7,6 +7,7 @@ import java.util.Random;
 import fr.diginamic.swing.jdr.personnage.Creature;
 import fr.diginamic.swing.jdr.personnage.Gobelin;
 import fr.diginamic.swing.jdr.personnage.Loup;
+import fr.diginamic.swing.jdr.personnage.Personnage;
 import fr.diginamic.swing.jdr.personnage.Troll;
 
 public class Adversaire {

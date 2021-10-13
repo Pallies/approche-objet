@@ -5,6 +5,12 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
 
 /**
  * Fenêtre principale
@@ -29,11 +35,15 @@ public class Frame extends JFrame {
 		PanelSouth panelSouth = new PanelSouth();
 		getContentPane().add(panelSouth, BorderLayout.SOUTH);
 		
-		JPanel heroPanel = new JPanel();
-		getContentPane().add(heroPanel, BorderLayout.WEST);
+		JPanel HeroCadre = new JPanel();
+		getContentPane().add(HeroCadre, BorderLayout.WEST);
+		HeroCadre.setLayout(null);
 		
-		JPanel creaturePanel=new JPanel();
-		getContentPane().add(creaturePanel, BorderLayout.EAST);
+		JLabel heroImg = new JLabel("");
+		heroImg.setBounds(0, 0, 230, 528);
+		heroImg.setHorizontalAlignment(SwingConstants.LEFT);
+		heroImg.setIcon(new ImageIcon("C:/Users/Peac178/Documents/dev/Diginamic/Exercices/approche-object/images/hero.jpg"));
+		HeroCadre.add(heroImg);
 		
 	}
 }

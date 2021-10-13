@@ -5,7 +5,7 @@ package fr.diginamic.swing.jdr.personnage;
  * @author Yvan Palliès
  *
  */
-public class Hero extends Personne {
+public class Hero extends Personnage {
 
 	private int score;
 	private static Hero hero = null;

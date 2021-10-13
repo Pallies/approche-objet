@@ -8,7 +8,7 @@ import java.util.Random;
  * @author Yvan Palliès
  *
  */
-public abstract class Personne {
+public abstract class Personnage {
 
 	private int force;
 	private int pointDeVie;
@@ -21,7 +21,7 @@ public abstract class Personne {
 	 * @param pointVieMin
 	 * @param pointVieMax
 	 */
-	public Personne(int forceMin, int forceMax, int pointVieMin, int pointVieMax) {
+	public Personnage(int forceMin, int forceMax, int pointVieMin, int pointVieMax) {
 		force = randomDelimiteur(forceMin, forceMax);
 		pointDeVie = randomDelimiteur(pointVieMin, pointVieMax);
 	}
