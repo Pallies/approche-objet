@@ -1,6 +1,5 @@
 package sets;
 
-import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,7 +9,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
+
+import javax.security.auth.callback.Callback;
 
 public class TestPays {
 	private static Set<Pays> pays = new HashSet<>();
@@ -37,14 +42,26 @@ public class TestPays {
 		System.out.println("Recherchez le pays avec le PIB total le plus important " + pibTotalMaxView());
 //		mettre en majuscule le pays qui a le PIB total le plus petit
 		System.out.println("\n\n\tMettre en majuscule le pays qui a le PIB total le plus petit");
-		pibTotalMinUpperCase();
+//		pibTotalMinUpperCase();
+		actionList((p, compar) -> {
+			Pays pays = p.next();
+			if (compar.equals(pays.getPib() * pays.getNbHabitant()))
+				pays.setNom(pays.getNom().toUpperCase());
+		});
 		System.out.println("\n\n\tSupprimez le pays dont le PIB total est le plus petit");
 //		Supprimez le pays dont le PIB total est le plus petit
-		pibTotalMinView();
+//		pibTotalMinView();
+		actionList((p, compar) -> {
+			Pays pays = p.next();
+			if (compar.equals(pays.getPib() * pays.getNbHabitant()))
+				p.remove();
+		});
 		System.out.println("\n\n\tListe des pays ainsi modifiés avec leur nom, nombre d’habitants et PIB total");
 //		Affichez l’ensemble des pays ainsi modifiés avec leur nom, nombre d’habitants et PIB total
 		pays.forEach(System.out::println);
 	}
+
+
 
 	public static Pays pibParHabitantMax() {
 		return ControlOptionalList(pays.stream().max(Comparator.comparing(Pays::getPib)));
@@ -76,33 +93,53 @@ public class TestPays {
 				.collect(Collectors.toList()).get(0)).collect(Collectors.toList()).get(0);
 
 	}
-
-	public static void pibTotalMinView() {
+	
+	/**
+	 * Remplace les fonctions pibTotalMinView() et pibTotalMinUpperCase()
+	 * @param biConsumer
+	 */
+	public static void actionList(BiConsumer<Iterator<Pays>, Double> biConsumer) {
 		Iterator<Pays> paysIter = pays.iterator();
 		Double compar = pibTotalMin();
 		while (paysIter.hasNext()) {
-			Pays p = (Pays) paysIter.next();
-			if (compar.equals(p.getPib() * p.getNbHabitant()))
-				paysIter.remove();
+			biConsumer.accept(paysIter, compar);
 		}
 		pays.stream().map(x -> x + "  ").forEach(System.out::println);
 	}
+//	public static void pibTotalMinView() {
+//		Iterator<Pays> paysIter = pays.iterator();
+//		Double compar = pibTotalMin();
+//		while (paysIter.hasNext()) {
+//			Pays p = paysIter.next();
+//			if (compar.equals(p.getPib() * p.getNbHabitant()))
+//				paysIter.remove();
+//		}
+//		pays.stream().map(x -> x + "  ").forEach(System.out::println);
+//	}
 
-	public static void pibTotalMinUpperCase() {
-		Iterator<Pays> paysIter = pays.iterator();
-		Double compar = pibTotalMin();
-		while (paysIter.hasNext()) {
-			Pays p = paysIter.next();
-			if (compar.equals(p.getPib() * p.getNbHabitant()))
-				p.setNom(p.getNom().toUpperCase());
-		}
-		pays.stream().map(x -> x + "  ").forEach(System.out::println);
-	}
+//	public static void pibTotalMinUpperCase() {
+//		Iterator<Pays> paysIter = pays.iterator();
+//		Double compar = pibTotalMin();
+//		while (paysIter.hasNext()) {
+//			Pays p = paysIter.next();
+//			if (compar.equals(p.getPib() * p.getNbHabitant()))
+//				p.setNom(p.getNom().toUpperCase());
+//		}
+//		pays.stream().map(x -> x + "  ").forEach(System.out::println);
+//	}
 
-	public static <E> E ControlOptionalList(Optional<E> list) {
+	/**
+	 * Control l'objet de type E si present et le retourne sinon retourne null
+	 * 
+	 * @param <E>  typage de l'objet
+	 * @param list liste d'objet de type <E>
+	 * @return un objet de type <E>
+	 */
+	private static <E> E ControlOptionalList(Optional<E> list) {
 		Optional<E> opt = list;
 		if (opt.isPresent())
 			return opt.get();
 		return null;
 	}
+
 }
