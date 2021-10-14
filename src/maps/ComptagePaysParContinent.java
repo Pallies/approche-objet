@@ -2,12 +2,9 @@ package maps;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ComptagePaysParContinent {
 
@@ -20,16 +17,16 @@ public class ComptagePaysParContinent {
 		Pays p6 = new Pays("Indnésie", 220_000_000, "océanie");
 		Pays p7 = new Pays("Australie", 20_000_000, "océanie");
 		List<Pays> pays = Arrays.asList(p1, p2, p3, p4, p5, p6, p7);
-		Set<String> continentSet = new HashSet<>();
-
+//		création du HashMap
 		Map<String, Integer> continentCount = new HashMap<>();
-		List<String> continentPays=pays.stream().map(Pays::getContinent).collect(Collectors.toList());
+
+		List<String> continentPays = pays.stream().map(Pays::getContinent).collect(Collectors.toList());
 //		initialisation
-		for(String c:continentPays) {
-			if(continentCount.get(c)==null) {
-				continentCount.put(c, 1);				
-			}else {
-				continentCount.put(c, continentCount.get(c)+1);
+		for (String c : continentPays) {
+			if (continentCount.get(c) == null) {
+				continentCount.put(c, 1);
+			} else {
+				continentCount.put(c, continentCount.get(c) + 1);
 			}
 		}
 		continentCount.entrySet().forEach(System.out::println);
