@@ -2,6 +2,7 @@ package sets;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -10,12 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.BiPredicate;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
-
-import javax.security.auth.callback.Callback;
 
 public class TestPays {
 	private static Set<Pays> pays = new HashSet<>();
@@ -30,8 +26,12 @@ public class TestPays {
 		Pays chine = new Pays("Chine", 1_439_323_776, 10_500.4);
 		Pays russie = new Pays("Russie", 145_934_462, 10_126.7);
 		Pays inde = new Pays("Inde", 1_380_004_385, 1_900.7);
-
-//		AJOUTER M-1		
+		List<Pays> pay = Arrays.asList(usa, france, allemagne, royaumUnie, italie, japon, chine, russie, inde);
+		pay.stream().sorted(Comparator.comparingDouble(Pays::getPib)).forEach(System.out::println);
+		pay.stream().sorted(Comparator.comparing(p -> p.getPib())).forEach(System.out::println);
+		Collections.sort(pay,(p1,p2) ->(int) (p1.getPib()-p2.getPib()));
+//		pay.stream().sorted(Comparator.comparing((p1,p2) -> p1.getPib()-p2.getPib())).forEach(System.out::println);
+		// AJOUTER M-1
 		Collections.addAll(pays, usa, france, allemagne, royaumUnie, italie, japon, chine, russie, inde);
 //		M-2
 		pays.addAll(Arrays.asList(usa, france, allemagne, royaumUnie, italie, japon, chine, russie, inde));
@@ -61,8 +61,6 @@ public class TestPays {
 		pays.forEach(System.out::println);
 	}
 
-
-
 	public static Pays pibParHabitantMax() {
 		return ControlOptionalList(pays.stream().max(Comparator.comparing(Pays::getPib)));
 	}
@@ -91,11 +89,11 @@ public class TestPays {
 		pibTotalMax.add(compar);
 		return pibTotalMax.stream().map(value -> pays.stream().filter(p -> (p.getNbHabitant() * p.getPib()) == value)
 				.collect(Collectors.toList()).get(0)).collect(Collectors.toList()).get(0);
-
 	}
-	
+
 	/**
 	 * Remplace les fonctions pibTotalMinView() et pibTotalMinUpperCase()
+	 * 
 	 * @param biConsumer
 	 */
 	public static void actionList(BiConsumer<Iterator<Pays>, Double> biConsumer) {
