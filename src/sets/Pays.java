@@ -19,7 +19,7 @@ public class Pays {
 
 	@Override
 	public String toString() {
-		return "Pays [nom=" + nom + ", nbHabitant=" + nbHabitant + ", pib=" + pib + "]";
+		return "Pays = " + nom + ", Habitants = " + nbHabitant + ", PIB = " + pib ;
 	}
 
 	/**Setter

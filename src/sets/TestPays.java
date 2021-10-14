@@ -28,13 +28,14 @@ public class TestPays {
 //		Recherchez le pays avec le PIB/habitant le plus important
 		System.out.println("Recherchez le pays avec le PIB/habitant le plus important" + pibParHabitantMax());
 //		Recherchez le pays avec le PIB total le plus important
-		System.out.println("Recherchez le pays avec le PIB total le plus important " + pibTotalMaxAffiche());
+		System.out.println("Recherchez le pays avec le PIB total le plus important " + pibTotalMaxView());
 //		mettre en majuscule le pays qui a le PIB total le plus petit
+		System.out.println("\n\n\tMettre en majuscule le pays qui a le PIB total le plus petit");
 		pibTotalMinUpperCase();
-		System.out.println("\n\n");
+		System.out.println("\n\n\tSupprimez le pays dont le PIB total est le plus petit");
 //		Supprimez le pays dont le PIB total est le plus petit
-		pibTotalMinAffiche();
-		System.out.println("\n\n");
+		pibTotalMinView();
+		System.out.println("\n\n\tListe des pays ainsi modifiés avec leur nom, nombre d’habitants et PIB total");
 //		Affichez l’ensemble des pays ainsi modifiés avec leur nom, nombre d’habitants et PIB total
 		pays.forEach(System.out::println);
 	}
@@ -67,7 +68,7 @@ public class TestPays {
 		return pays.stream().map(p -> p.getPib() * p.getNbHabitant()).collect(Collectors.toList());
 	}
 
-	public static Pays pibTotalMaxAffiche() {
+	public static Pays pibTotalMaxView() {
 		Double compar = pibTotalMax();
 		List<Double> pibTotalMax = new ArrayList<>();
 		pibTotalMax.add(compar);
@@ -76,7 +77,7 @@ public class TestPays {
 
 	}
 
-	public static void pibTotalMinAffiche() {
+	public static void pibTotalMinView() {
 		Iterator<Pays> paysIter = pays.iterator();
 		Double compar = pibTotalMin();
 		while (paysIter.hasNext()) {
