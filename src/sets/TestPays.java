@@ -1,5 +1,6 @@
 package sets;
 
+import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -29,7 +30,7 @@ public class TestPays {
 		Collections.addAll(pays, usa, france, allemagne, royaumUnie, italie, japon, chine, russie, inde);
 //		M-2
 		pays.addAll(Arrays.asList(usa, france, allemagne, royaumUnie, italie, japon, chine, russie, inde));
-		
+
 //		Recherchez le pays avec le PIB/habitant le plus important
 		System.out.println("Recherchez le pays avec le PIB/habitant le plus important" + pibParHabitantMax());
 //		Recherchez le pays avec le PIB total le plus important
@@ -46,27 +47,21 @@ public class TestPays {
 	}
 
 	public static Pays pibParHabitantMax() {
-		return pays.stream().max(Comparator.comparing(Pays::getPib)).get();
+		return ControlOptionalList(pays.stream().max(Comparator.comparing(Pays::getPib)));
 	}
 
 	public static Pays pibParHabitantMin() {
-		return pays.stream().min(Comparator.comparing(Pays::getPib)).get();
+		return ControlOptionalList(pays.stream().min(Comparator.comparing(Pays::getPib)));
 	}
 
 	public static Double pibTotalMax() {
 		List<Double> list = pibTotalList();
-		Optional<Double> opt = list.stream().max(Comparator.comparing(v -> v));
-		if (opt.isPresent())
-			return opt.get();
-		return null;
+		return ControlOptionalList(list.stream().max(Comparator.comparing(v -> v)));
 	}
 
 	public static Double pibTotalMin() {
 		List<Double> list = pibTotalList();
-		Optional<Double> opt = list.stream().min(Comparator.comparing(v -> v));
-		if (opt.isPresent())
-			return opt.get();
-		return null;
+		return ControlOptionalList(list.stream().min(Comparator.comparing(v -> v)));
 	}
 
 	private static List<Double> pibTotalList() {
@@ -97,10 +92,17 @@ public class TestPays {
 		Iterator<Pays> paysIter = pays.iterator();
 		Double compar = pibTotalMin();
 		while (paysIter.hasNext()) {
-			Pays p = (Pays) paysIter.next();
+			Pays p = paysIter.next();
 			if (compar.equals(p.getPib() * p.getNbHabitant()))
 				p.setNom(p.getNom().toUpperCase());
 		}
 		pays.stream().map(x -> x + "  ").forEach(System.out::println);
+	}
+
+	public static <E> E ControlOptionalList(Optional<E> list) {
+		Optional<E> opt = list;
+		if (opt.isPresent())
+			return opt.get();
+		return null;
 	}
 }
