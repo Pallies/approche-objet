@@ -41,7 +41,6 @@ public class Frame extends JFrame {
 		
 		JLabel heroImg = new JLabel("");
 		heroImg.setBounds(0, 0, 230, 528);
-		heroImg.setHorizontalAlignment(SwingConstants.LEFT);
 		heroImg.setIcon(new ImageIcon("C:/Users/Peac178/Documents/dev/Diginamic/Exercices/approche-object/images/hero.jpg"));
 		HeroCadre.add(heroImg);
 		

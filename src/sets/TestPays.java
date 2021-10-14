@@ -1,6 +1,7 @@
 package sets;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -24,7 +25,11 @@ public class TestPays {
 		Pays russie = new Pays("Russie", 145_934_462, 10_126.7);
 		Pays inde = new Pays("Inde", 1_380_004_385, 1_900.7);
 
+//		AJOUTER M-1		
 		Collections.addAll(pays, usa, france, allemagne, royaumUnie, italie, japon, chine, russie, inde);
+//		M-2
+		pays.addAll(Arrays.asList(usa, france, allemagne, royaumUnie, italie, japon, chine, russie, inde));
+		
 //		Recherchez le pays avec le PIB/habitant le plus important
 		System.out.println("Recherchez le pays avec le PIB/habitant le plus important" + pibParHabitantMax());
 //		Recherchez le pays avec le PIB total le plus important
