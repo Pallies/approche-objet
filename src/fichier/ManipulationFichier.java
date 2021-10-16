@@ -62,8 +62,7 @@ private static final String HEADER=String.valueOf("Code département;Nom de la c
 	}
 
 	public static void writeForceFile(List<String> list,Path ciblePath) throws IOException {
-		Files.deleteIfExists(ciblePath);
-		Files.write(ciblePath, list,StandardCharsets.UTF_8);
+		Files.write(ciblePath, list,StandardCharsets.UTF_8,StandardOpenOption.CREATE);
 	}
 
 	private static void confirmation(List<String> list) throws IOException {
