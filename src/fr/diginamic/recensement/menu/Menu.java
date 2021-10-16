@@ -3,10 +3,11 @@ package fr.diginamic.recensement.menu;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import fr.diginamic.recensement.view.AffichageMain;
 import fr.diginamic.recensement.view.AffichageMenu;
 
 public class Menu extends MenuService {
-	private AffichageMenu menuView;
+	private AffichageMain menuView;
 	private MenuDepartement deptMenu = new MenuDepartement();
 	private MenuRegion regionMenu = new MenuRegion();
 	private MenuVille villeMenu = new MenuVille();

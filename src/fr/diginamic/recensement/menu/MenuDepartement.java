@@ -4,11 +4,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.services.DeptService;
+import fr.diginamic.recensement.view.AffichageMain;
 import fr.diginamic.recensement.view.AffichageMenuDept;
 
 public class MenuDepartement extends MenuService {
 
-	private AffichageMenuDept deptView = new AffichageMenuDept();
+	private AffichageMain deptView = new AffichageMenuDept();
 	private DeptService deptService = new DeptService();
 
 	@Override
@@ -36,7 +37,7 @@ public class MenuDepartement extends MenuService {
 		switch (key) {
 //		- 2. Population d’un département donné
 		case 2:
-			deptView.menuDept();
+			deptView.menu();
 			numDept = choixFilter(scanner);
 			deptService.populationTypeDonnee(String.valueOf(numDept));
 			break;
@@ -46,7 +47,7 @@ public class MenuDepartement extends MenuService {
 			break;
 //		- 6. Afficher les 10 villes les plus peuplées d’un département
 		case 6:
-			deptView.menuDept();
+			deptView.menu();
 			numDept = choixFilter(scanner);
 			deptService.dixVilles(String.valueOf(numDept));
 			break;

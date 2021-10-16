@@ -12,13 +12,15 @@ public class AffichageMenuDept extends AffichageMain {
 			"| - Entrez. le N° département souhaité                           |",
 			"+----------------------------------------------------------------+");
 
-	public void menuDept() {
+	public void menu() {
 		menu.forEach(System.out::println);
 	}
-    public void populationTotal(String key,Long hab) {
+    @Override
+    public void populationTotal(Long hab,String key) {
     	System.out.println(" Nbre d'habitant : " + hab + " pour le département : " + key);
     }
-    public void dixDeptAvecPlusPopulation(TreeMap<String, Long> treeMap) {
+    @Override
+    public void dixAvecPlusPopulation(TreeMap<String, Long> treeMap) {
     	int index = 0;
 		for (Entry<String, Long> o : treeMap.entrySet()) {
 			if (index > 9)
