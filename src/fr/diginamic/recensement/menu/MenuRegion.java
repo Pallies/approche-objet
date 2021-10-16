@@ -4,11 +4,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.services.RegionService;
+import fr.diginamic.recensement.view.AffichageMain;
 import fr.diginamic.recensement.view.AffichageMenuRegion;
 
 public class MenuRegion extends MenuService {
 
-	private AffichageMenuRegion regionView= new AffichageMenuRegion();
+	private AffichageMain regionView= new AffichageMenuRegion();
 	private RegionService regionService = new RegionService();
 
 	@Override
@@ -34,7 +35,7 @@ public class MenuRegion extends MenuService {
 		switch (key) {
 //		- 3. Population d’une région donnée
 		case 3:
-			regionView.menuRegion();
+			regionView.menu();
 			numReg = choixFilter(scanner);
 			regionService.populationTypeDonnee(String.valueOf(numReg));
 			break;
@@ -44,7 +45,7 @@ public class MenuRegion extends MenuService {
 			break;
 //		- 7. Afficher les 10 villes les plus peuplées d’une région
 		case 7:
-			regionView.menuRegion();
+			regionView.menu();
 			numReg = choixFilter(scanner);
 			regionService.dixVilles(String.valueOf(numReg));
 			break;

@@ -40,7 +40,7 @@ public class RegionService extends ActionService{
 		}
 		TreeMap<String, Long> treeMap = new TreeMap<String, Long>(new HashComparator(regionByHab));
 		treeMap.putAll(regionByHab);
-		regionView.dixRegionAvecPlusPopulation(treeMap);
+		regionView.dixAvecPlusPopulation(treeMap);
 	}
 //	- 7. Afficher les 10 villes les plus peuplées d’une région
 

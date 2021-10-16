@@ -4,11 +4,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.services.VilleService;
+import fr.diginamic.recensement.view.AffichageMain;
 import fr.diginamic.recensement.view.AffichageMenuVille;
 
 public class MenuVille extends MenuService {
 	private VilleService villeService=new VilleService();
-	private AffichageMenuVille villeView;
+	private AffichageMain villeView;
 	@Override
 	public void traiter(Scanner scanner) {
 	}

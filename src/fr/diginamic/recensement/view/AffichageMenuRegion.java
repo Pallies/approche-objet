@@ -13,7 +13,8 @@ public class AffichageMenuRegion extends AffichageMain{
 			"| - Entrez. le N° de région ou la région souhaitée               |",
 			"+----------------------------------------------------------------+");
 
-	public void menuRegion() {
+	@Override
+	public void menu() {
 		menu.forEach(System.out::println);
 	}
 
@@ -25,17 +26,19 @@ public class AffichageMenuRegion extends AffichageMain{
 //		}
 //		return tmp;
 //	}
+	@Override
 	public void affichageSelectionRegion(Map<Integer, String> region) {
 		for (Integer key : region.keySet()) {
 			System.out.println(" Region  : " + region.get(key) + "\t\tN° " + key);
 		}
 	}
-
+	@Override
 	public void populationTotal(Long hab, String region) {
 		System.out.println(" Nbre d'habitant : " + hab + " pour la région : " + region);
 	}
-
-	public void dixRegionAvecPlusPopulation(TreeMap<String, Long> treeMap) {
+	
+	@Override
+	public void dixAvecPlusPopulation(TreeMap<String, Long> treeMap) {
 		int index = 0;
 		for (Entry<String, Long> o : treeMap.entrySet()) {
 			if (index > 9)

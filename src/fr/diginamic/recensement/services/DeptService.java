@@ -25,7 +25,7 @@ public class DeptService extends ActionService {
 		Optional<Long> habTotal = Recensement.getInstance().stream().sorted(new PopulationReverse())
 				.filter(new EqualsDept(key)).map(new SelectHab()).reduce(new AddHabitants());
 		if (habTotal.isPresent())
-			deptView.populationTotal(key, habTotal.get());
+			deptView.populationTotal(habTotal.get(),key);
 
 	}
 
@@ -39,7 +39,7 @@ public class DeptService extends ActionService {
 
 		TreeMap<String, Long> treeMap = new TreeMap<String, Long>(new HashComparator(deptByHab));
 		treeMap.putAll(deptByHab);
-		deptView.dixDeptAvecPlusPopulation(treeMap);
+		deptView.dixAvecPlusPopulation(treeMap);
 
 	}
 
