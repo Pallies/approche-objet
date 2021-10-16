@@ -35,7 +35,7 @@ public class VilleRef {
 
 	@Override
 	public String toString() {
-		return "Dept :" + codeDept + " \t Ville \t" + nomCommune + " \t population \t " + population;
+		return codeDept+";" + nomCommune + ";" + population;
 	}
 
 }
