@@ -1,6 +1,5 @@
 package fr.diginamic.recensement.menu;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.services.DeptService;
@@ -12,24 +11,7 @@ public class MenuDepartement extends MenuService {
 	private AffichageMain deptView = new AffichageMenuDept();
 	private DeptService deptService = new DeptService();
 
-	@Override
-	public void traiter(Scanner scanner) {
-	}
 
-	@Override
-	public int choixFilter(Scanner scanner) {
-		Integer key = null;
-		do {
-			try {
-				key = scanner.nextInt();
-
-			} catch (InputMismatchException e) {
-				deptView.msgExceptionInputInt();
-				key = null;
-			}
-		} while (key == null);
-		return key;
-	}
 
 	@Override
 	public void choixMenu(int key, Scanner scanner) {

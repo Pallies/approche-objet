@@ -1,31 +1,16 @@
 package fr.diginamic.recensement.menu;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.view.AffichageMain;
-import fr.diginamic.recensement.view.AffichageMenu;
 
 public class Menu extends MenuService {
+	
 	private AffichageMain menuView;
 	private MenuDepartement deptMenu = new MenuDepartement();
 	private MenuRegion regionMenu = new MenuRegion();
 	private MenuVille villeMenu = new MenuVille();
 
-	@Override
-	public void traiter(Scanner scanner) {
-		Integer key = null;
-		do {
-			menuView=new AffichageMenu();
-			try {
-				key = scanner.nextInt();
-
-			} catch (InputMismatchException e) {
-				menuView.msgExceptionInputInt();
-			}
-			choixMenu(key, scanner);
-		} while (true);
-	}
 
 	@Override
 	public void choixMenu(int key, Scanner scanner) {

@@ -1,6 +1,5 @@
 package fr.diginamic.recensement.menu;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.services.RegionService;
@@ -12,22 +11,6 @@ public class MenuRegion extends MenuService {
 	private AffichageMain regionView= new AffichageMenuRegion();
 	private RegionService regionService = new RegionService();
 
-	@Override
-	public void traiter(Scanner scanner) {
-	}
-
-	@Override
-	public int choixFilter(Scanner scanner) {
-		Integer key = null;
-		do {
-			try {
-				key = scanner.nextInt();
-			} catch (InputMismatchException e) {
-				key = null;
-			}
-		} while (key == null);
-		return key;
-	}
 
 	@Override
 	public void choixMenu(int key, Scanner scanner) { 
