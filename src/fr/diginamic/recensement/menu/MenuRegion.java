@@ -5,7 +5,11 @@ import java.util.Scanner;
 import fr.diginamic.recensement.services.RegionService;
 import fr.diginamic.recensement.view.AffichageMain;
 import fr.diginamic.recensement.view.AffichageMenuRegion;
-
+/**
+ * Class Menu Région
+ * @author Yvan Palliès
+ *
+ */
 public class MenuRegion extends MenuService {
 
 	private AffichageMain regionView= new AffichageMenuRegion();

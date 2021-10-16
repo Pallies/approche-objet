@@ -5,7 +5,11 @@ import java.util.Scanner;
 import fr.diginamic.recensement.services.DeptService;
 import fr.diginamic.recensement.view.AffichageMain;
 import fr.diginamic.recensement.view.AffichageMenuDept;
-
+/**
+ * Class Menu Département
+ * @author Yvan Palliès
+ *
+ */
 public class MenuDepartement extends MenuService {
 
 	private AffichageMain deptView = new AffichageMenuDept();

@@ -6,6 +6,11 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.Map.Entry;
 
+/**
+ * Class pour l'affichage des réponses Régions
+ * @author Yvan Palliès
+ *
+ */
 public class AffichageMenuRegion extends AffichageMain{
 
 	private List<String> menu = Arrays.asList(

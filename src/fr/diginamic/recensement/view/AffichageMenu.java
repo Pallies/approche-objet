@@ -3,6 +3,11 @@ package fr.diginamic.recensement.view;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Class pour afficher le menu principal
+ * @author Yvan Palliès
+ *
+ */
 public class AffichageMenu extends AffichageMain {
 
 	private List<String> menu = Arrays.asList("                      ________________                            ",

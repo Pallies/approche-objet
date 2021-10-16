@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 import fr.diginamic.recensement.view.AffichageMain;
 
+/**
+ * Class Menu Principal
+ * @author Yvan Palliès
+ *
+ */
 public class Menu extends MenuService {
 	
 	private AffichageMain menuView;
@@ -12,6 +17,12 @@ public class Menu extends MenuService {
 	private MenuVille villeMenu = new MenuVille();
 
 
+	/**
+	 * Choix du menu principal
+	 * redirection vers le menu :
+	 * villeMenu / regionMenu / deptMenu
+	 * @see AffichageMenu
+	 */
 	@Override
 	public void choixMenu(int key, Scanner scanner) {
 		switch (key) {
@@ -46,8 +57,4 @@ public class Menu extends MenuService {
 		}
 	}
 
-	@Override
-	public int choixFilter(Scanner scanner) {
-		return 0;
-	}
 }

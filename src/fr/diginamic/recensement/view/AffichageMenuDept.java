@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.TreeMap;
 import java.util.Map.Entry;
 
+/**
+ * Class pour l'affichage des réponses Département
+ * @author Yvan Palliès
+ *
+ */
 public class AffichageMenuDept extends AffichageMain {
 
 	private List<String> menu = Arrays.asList(

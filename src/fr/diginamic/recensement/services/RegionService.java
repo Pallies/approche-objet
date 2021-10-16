@@ -13,11 +13,16 @@ import fr.diginamic.recensement.utils.HashComparator;
 import fr.diginamic.recensement.utils.MapHabToVille;
 import fr.diginamic.recensement.utils.PopulationReverse;
 import fr.diginamic.recensement.utils.SelectHab;
+import fr.diginamic.recensement.view.AffichageMain;
 import fr.diginamic.recensement.view.AffichageMenuRegion;
-
+/**
+ * Class pour le traitement des réponses Régions
+ * @author Yvan Palliès
+ *
+ */
 public class RegionService extends ActionService{
 
-	private AffichageMenuRegion regionView=new AffichageMenuRegion();
+	private AffichageMain regionView=new AffichageMenuRegion();
 
 
 //	- 3. Population d’une région donnée
@@ -27,6 +32,7 @@ public class RegionService extends ActionService{
 				.filter(new EqualsRegion(key))
 				.map(new SelectHab())
 				.reduce(new AddHabitants());
+		
 		if (habTotal.isPresent())
 			regionView.populationTotal(habTotal.get(), key);
 	}
@@ -35,15 +41,17 @@ public class RegionService extends ActionService{
 	@Override
 	public void dixAvecPlusPopulation() {
 		Map<String, Long> regionByHab = new HashMap<String, Long>();
+		
 		for (Ville v : Recensement.getInstance()) {
 			regionByHab.merge(v.getRegion(), v.getPopulation(), Long::sum);
 		}
+		
 		TreeMap<String, Long> treeMap = new TreeMap<String, Long>(new HashComparator(regionByHab));
 		treeMap.putAll(regionByHab);
 		regionView.dixAvecPlusPopulation(treeMap);
 	}
+	
 //	- 7. Afficher les 10 villes les plus peuplées d’une région
-
 	@Override
 	public void dixVilles(String key) {
 		Recensement.getInstance().stream()
