@@ -10,7 +10,7 @@ public class TestEnumeration {
 		List<Saison> periode = Arrays.asList(Saison.values());
 
 //		Affichage
-		periode.stream().map(s -> s.getNom()).forEach(System.out::println);
+		periode.stream().forEach(System.out::println);
 
 		Saison ete = Saison.getSaison(2);
 		Saison ete2 = null;

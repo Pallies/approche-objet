@@ -1,5 +1,7 @@
 package fr.nutriscores.openfoodfacts.models;
 
+import java.util.List;
+
 public class Produit {
 
 	private Categorie categorie;

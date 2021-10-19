@@ -12,9 +12,24 @@ public enum Saison {
 		this.order = order;
 	}
 
+	/**
+	 * Recherche par libelle
+	 * @param label
+	 * @return Saison
+	 */
 	public static Saison libelle(String label) {
-		return Saison.valueOf(label.toUpperCase());
+		try {
+			return Saison.valueOf(label.toUpperCase());
+		} catch (Exception e) {
+			return null;
+		}
 	}
+
+	@Override
+	public String toString() {
+		return order + ". " + nom;
+	}
+
 	/**
 	 * Getter
 	 * 
@@ -24,19 +39,23 @@ public enum Saison {
 		return nom;
 	}
 
-	/**Getter
+	/**
+	 * Getter
+	 * 
 	 * @return the order
 	 */
 	public int getOrder() {
 		return order;
 	}
-	/**Getter
-	 * @return the Saison
-	 * index de la liste
-	 * pas de contrôle effectué sur n pour l'exercice
+
+	/**
+	 * Getter
+	 * 
+	 * @return the Saison index de la liste pas de contrôle effectué sur n pour
+	 *         l'exercice
 	 */
 	public static Saison getSaison(int n) {
 		Saison[] periode = Saison.values();
-		return periode[n-1];
+		return periode[n - 1];
 	}
 }

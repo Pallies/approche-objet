@@ -7,7 +7,7 @@ public class Element {
 	private HashMap<Attributs, Double> element;
 
 	public Element(Attributs[] attributsValues) {
-
+		
 	}
 
 }
