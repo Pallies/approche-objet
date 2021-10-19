@@ -65,6 +65,14 @@ class Ville {
 		nom = n;
 		nbHabitant = hab;
 	}
+	
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Ville)) {
+			return false;
+		}
+		Ville ville=(Ville) obj;
+		return this.nom.equals(ville.nom) && this.nbHabitant==ville.nbHabitant;
+	}
 	@Override
 	public String toString() {
 		return "Ville nom = " + nom + ", nbHabitant = " + nbHabitant + " ";
