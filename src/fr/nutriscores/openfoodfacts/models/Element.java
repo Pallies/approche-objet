@@ -1,8 +1,13 @@
 package fr.nutriscores.openfoodfacts.models;
 
-public class Element {
-	
-private HashMap<Attribut,Double> element;
+import java.util.HashMap;
 
+public class Element {
+
+	private HashMap<Attributs, Double> element;
+
+	public Element(Attributs[] attributsValues) {
+
+	}
 
 }
