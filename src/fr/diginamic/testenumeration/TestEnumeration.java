@@ -1,5 +1,7 @@
 package fr.diginamic.testenumeration;
 
+import static java.lang.Math.PI;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,13 +23,17 @@ public class TestEnumeration {
 				ete2 = s;
 		}
 		for (Saison s : periode) {
-			if (s.getOrder()==(2))
+			if (s.getOrder() == (2))
 				ete3 = s;
 		}
-		System.out.println("search ETE : "+ete+" "+ete2+" "+ete3+" "+ete4);
+		System.out.println("search ETE : " + ete + " " + ete2 + " " + ete3 + " " + ete4);
 
-		String libelle ="Hiver";
-		System.out.println("instance : "+Saison.libelle(libelle));
+		String libelle = "Hiver";
+		System.out.println("instance : " + Saison.libelle(libelle));
+
+		System.out.println("import static" + PI);
+		System.out.println(EnumSimplifie.TROIS);
+		System.out.println(EnumSimplifie.TROIS.ordinal());
 	}
 
 }

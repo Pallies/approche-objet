@@ -21,7 +21,7 @@ public class Ville implements Comparable<Ville> {
 		.append(nbHab)
 		.append(" sur le continent : ")
 		.append(continent.getContinent());
-		return String.valueOf(str); 
+		return str.toString(); 
 	}
 
 	@Override
