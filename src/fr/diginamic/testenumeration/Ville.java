@@ -17,9 +17,9 @@ public class Ville implements Comparable<Ville> {
 		StringBuilder str = new StringBuilder();
 		str.append("Ville : ")
 		.append(nom)
-		.append("avec un nb Habitants ")
+		.append(" avec un nb Habitants ")
 		.append(nbHab)
-		.append(" sur le continent :")
+		.append(" sur le continent : ")
 		.append(continent.getContinent());
 		return String.valueOf(str); 
 	}
