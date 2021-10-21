@@ -2,12 +2,18 @@ package fr.nutriscores.openfoodfacts.models;
 
 import java.util.HashMap;
 
+/**
+ * @author Yvan Palliès
+ * référence pour 100Gr
+ * de quantité d'élément 
+ * pour un attribut Naturel donné
+ */
 public class Element {
+	
+	private HashMap<String, Double> element;
 
-	private HashMap<Attributs, Double> element;
-
-	public Element(Attributs[] attributsValues) {
-		
+	public Element(Attributs attribut) {
+		element.put(attribut.getNom(), attribut.getQuantite());
 	}
 
 }
