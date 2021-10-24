@@ -26,11 +26,10 @@ public abstract class MenuService {
 			menuView=new AffichageMenu();
 			try {
 				key = scanner.nextInt();
-
+				choixMenu(key, scanner);
 			} catch (InputMismatchException e) {
 				menuView.msgExceptionInputInt();
 			}
-			choixMenu(key, scanner);
 		} while (true);
 	}
 
